@@ -1,7 +1,8 @@
 SELECT e.name
 FROM Employee e
 WHERE (
-    SELECT COUNT(*)
-    FROM Employee e2
-    WHERE e2.managerId = e.id
+    SELECT COUNT(E.managerId)
+    FROM Employee E
+    group by managerId
+    having e.id = E.managerId
 ) >= 5;
