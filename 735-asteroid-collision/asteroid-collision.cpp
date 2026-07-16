@@ -1,44 +1,34 @@
 class Solution {
-    void give(stack<int>& st, int x)
-    {
-        while(!st.empty())
-        {
-            int y=st.top();
-            if(x<0 && y>0)
-            {
-                if(abs(x)>y)st.pop();
-                else if(abs(x)==y)
-                {
-                    st.pop();
-                    return;
-                }
-                else return;
+    void give(stack<int>& st, int x) {
+        while (!st.empty() && st.top() > 0 && x < 0) {
+            if (st.top() < -x) {
+                st.pop();
             }
-            else 
-            {
-                st.push(x);
+            else if (st.top() == -x) {
+                st.pop();
+                return;
+            }
+            else {
                 return;
             }
         }
         st.push(x);
     }
-public:
-    vector<int> asteroidCollision(vector<int>& a) 
-    {
-        stack <int> st;
-        int n=a.size();
-        for(int i=0;i<n;i++)
-        {
-            give(st,a[i]);
-        }   
 
-        vector<int> ans;
-        while(!st.empty())
-        {
-            ans.push_back(st.top());
+public:
+    vector<int> asteroidCollision(vector<int>& asteroids) {
+        stack<int> st;
+
+        for (int x : asteroids)
+            give(st, x);
+
+        vector<int> ans(st.size());
+
+        for (int i = st.size() - 1; i >= 0; i--) {
+            ans[i] = st.top();
             st.pop();
         }
-        reverse(ans.begin(),ans.end());
+
         return ans;
     }
 };
