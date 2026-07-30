@@ -12,8 +12,6 @@ public:
         while(i<n && i<8+8+8)cnt+=j,i++;
         j++;
         while(i<n && i<8+8+8+8)cnt+=j,i++;
-        j++;
-        while(i<n && i<8+8+8+8+8)cnt+=j,i++;
         return cnt;
     }
 };
