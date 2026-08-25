@@ -2,7 +2,6 @@ class Solution {
 public:
     int missingMultiple(vector<int>& a, int k) {
         int ans=k;
-        sort(a.begin(),a.end());
         set<int> st;
         for(int i:a)
         {
