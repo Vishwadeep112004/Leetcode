@@ -12,20 +12,16 @@ class Solution {
     }
 public:
     int countGroups(vector<int>& pos, vector<int>& speed, int k) {
-        vector<int> a;
-        vector<int> b;
+        vector<int>a;
+        vector<int>b;
         int n=pos.size();
         int i=0;
-        for(i=0;i<n-1;i++)
+        while(i<n)
         {
-            while(i<n-1 && pos[i+1]-pos[i]<=k)i++;
+            while(i<n-1&&pos[i+1]-pos[i]<=k)i++;
             a.push_back(pos[i]);
             b.push_back(speed[i]);
-        }
-        if(i<n)
-        {
-            a.push_back(pos[i]);
-            b.push_back(speed[i]);
+            i++;
         }
         if(a.size()==1)return 1;
         return give(b);
