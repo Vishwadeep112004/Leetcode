@@ -28,11 +28,10 @@ public:
             b.push_back(speed[i]);
         }
 
-        for(int i:a)cout<<i<<" ";
-        cout<<endl;
-        for(int i:b)cout<<i<<" ";
+        // for(int i:a)cout<<i<<" ";
+        // cout<<endl;
+        // for(int i:b)cout<<i<<" ";
         if(a.size()==1)return 1;
-
         return give(b);
     }
 };
