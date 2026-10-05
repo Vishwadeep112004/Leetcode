@@ -1,22 +1,19 @@
 class Solution {
-    set<string> st;
+    vector<string> ans;
     void give(int open, int close, string a)
     {
         if(open==0 && close==0)
         {
-            st.insert(a);
+            ans.push_back(a);
             return;
-        }        
-        if(open>0)give(open-1,close,a+"(");
-        if(close>open)give(open,close-1,a+")");
+        }
+        if(open!=0)give(open-1,close, a+"(");
+        if(open<close && close!=0)give(open,close-1,a+")");
     }
 public:
     vector<string> generateParenthesis(int n) 
     {
         give(n,n,"");
-        vector<string> ans;
-        for(string s:st)ans.push_back(s);
-        cout<<ans.size();
         return ans;
     }
 };
