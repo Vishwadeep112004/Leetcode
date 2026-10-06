@@ -12,7 +12,6 @@ public:
                 if(cnt1>0)cnt1--;
                 else cnt2++;
             }
-            cout<<i<<" "<<cnt1<<endl;
         }
         return cnt1+cnt2;
     }
