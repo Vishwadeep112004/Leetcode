@@ -14,7 +14,7 @@ public:
                 int int0=ans[len-1][0];
                 int int1=ans[len-1][1];
                 ans.pop_back();
-                ans.push_back({min(int0,a[i][0]),max(int1,a[i][1])});
+                ans.push_back({int0,max(int1,a[i][1])});
             }
             else ans.push_back(a[i]);
         }
