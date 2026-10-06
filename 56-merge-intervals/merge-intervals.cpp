@@ -9,7 +9,7 @@ public:
         for(int i=1;i<n;i++)
         {
             int len=ans.size();
-            if(ans[len-1][1]>=a[i][0] || a[len-1][0]==a[i][0])
+            if(ans[len-1][1]>=a[i][0])
             {
                 int int0=ans[len-1][0];
                 int int1=ans[len-1][1];
