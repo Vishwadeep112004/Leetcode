@@ -7,7 +7,8 @@ public:
             if(sum>9)
             {
                 a+=('0'+9);
-                sum-=9;            }
+                sum-=9;   
+            }
             else 
             {
                 a+=('0'+sum);
