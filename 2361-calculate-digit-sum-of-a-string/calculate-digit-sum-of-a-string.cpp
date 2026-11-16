@@ -2,10 +2,7 @@ class Solution {
     string sum(string a)
     {
         int n=0;
-        for(char i:a)
-        {
-            n+=(i-'0');
-        }
+        for(char i:a) n+=(i-'0');
         return to_string(n);
     }
 public:
@@ -18,16 +15,10 @@ public:
         {
             string temp="";
             int j=i;
-            while(i<min(j+k,n))
-            {
-                temp+=s[i];
-                i++;
-            }
-            // cout<<temp<<endl;
+            while(i<min(j+k,n))temp+=s[i],i++;
             newstr+=sum(temp);
             i--;
         }
-        // cout<<newstr<<endl;
         return digitSum(newstr,k);
     }
 };
